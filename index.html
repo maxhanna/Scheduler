@@ -1,0 +1,897 @@
+<html>
+<head>
+<title>Gassia's Salon</title>
+<script>
+function correctCalendarDays()
+{
+	var month = document.getElementById("month").innerHTML;
+	var year = parseInt(document.getElementById("year").innerHTML);
+	var theDate = month + " 1, " + year + " 00:00:01";
+	var date = new Date(theDate);
+	function findMonthStart(date) {
+			var start = new Date(date.getFullYear(), date.getMonth(), 1);
+			return start;
+	}
+	var firstDayOfMonth = (findMonthStart(date) + "").substring(0,3);
+	document.getElementById("bookingArea").innerHTML = 'Select a day on the calendar to book an appointment.';
+
+	function replenishDays()
+	{
+		var daysToReplenish = 1;
+		if (month == "January")
+			daysToReplenish = 31;
+		else if (month == "February")
+		{
+			if (new Date(year, 1, 29).getMonth() == 1)
+			{
+				daysToReplenish = 29;
+			}
+			else
+				daysToReplenish = 28;
+		}
+		else if (month == "March")
+			daysToReplenish = 31;
+		else if (month == "April")
+			daysToReplenish = 30;
+		else if (month == "May")
+			daysToReplenish = 31;
+		else if (month == "June")
+			daysToReplenish = 30;
+		else if (month == "July")
+			daysToReplenish = 31;
+		else if (month == "August")
+			daysToReplenish = 31;
+		else if (month == "September")
+			daysToReplenish = 30;
+		else if (month == "October")
+			daysToReplenish = 31;
+		else if (month == "November")
+			daysToReplenish = 30;
+		else if (month == "December")
+			daysToReplenish = 31;
+			
+		for (var x = 1; x < 43; x++)
+		{
+			var currDay = "day"+x+"";
+			document.getElementById(currDay).innerHTML = ('');
+		}
+		if (firstDayOfMonth == "Sun" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 1; x < 29; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Sun" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 1; x < 30; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Sun" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 1; x < 31; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Sun" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 1; x < 32; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Mon" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 2; x < 30; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Mon" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 2; x < 31; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Mon" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 2; x < 32; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Mon" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 2; x < 33; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Tue" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 3; x < 31; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Tue" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 3; x < 32; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Tue" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 3; x < 33; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Tue" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 3; x < 34; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Wed" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 4; x < 32; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Wed" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 4; x < 33; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Wed" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 4; x < 34; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Wed" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 4; x < 35; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Thu" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 5; x < 33; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Thu" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 5; x < 34; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Thu" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 5; x < 35; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Thu" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 5; x < 36; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Fri" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 6; x < 37; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Fri" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 6; x < 38; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Fri" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 6; x < 36; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Fri" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 6; x < 37; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Sat" && daysToReplenish == 28) 
+		{
+			var count = 1;
+			for (var x = 7; x < 35; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+				
+			}
+		}
+		if (firstDayOfMonth == "Sat" && daysToReplenish == 29) 
+		{
+			var count = 1;
+			for (var x = 7; x < 36; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Sat" && daysToReplenish == 30) 
+		{
+			var count = 1;
+			for (var x = 7; x < 37; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		if (firstDayOfMonth == "Sat" && daysToReplenish == 31) 
+		{
+			var count = 1;
+			for (var x = 7; x < 38; x++)
+			{
+				var currDay = "day"+x+"";
+				document.getElementById(currDay).innerHTML = count++;
+			}
+		}
+		
+	}
+	if (firstDayOfMonth == "Mon")
+	{
+		document.getElementById("day1").innerHTML = ('');
+	}
+	else if (firstDayOfMonth == "Tue")
+	{
+		document.getElementById("day1").innerHTML = ('');
+		document.getElementById("day2").innerHTML = ('');
+	}
+	else if (firstDayOfMonth == "Wed")
+	{
+		document.getElementById("day1").innerHTML = ('');
+		document.getElementById("day2").innerHTML = ('');
+		document.getElementById("day3").innerHTML = ('');
+	}
+	else if (firstDayOfMonth == "Thu")
+	{
+		document.getElementById("day1").innerHTML = ('');
+		document.getElementById("day2").innerHTML = ('');
+		document.getElementById("day3").innerHTML = ('');
+		document.getElementById("day4").innerHTML = ('');
+	}
+	else if (firstDayOfMonth == "Fri")
+	{
+		document.getElementById("day1").innerHTML = ('');
+		document.getElementById("day2").innerHTML = ('');
+		document.getElementById("day3").innerHTML = ('');
+		document.getElementById("day4").innerHTML = ('');
+		document.getElementById("day5").innerHTML = ('');
+	}
+	else if (firstDayOfMonth == "Sat")
+	{
+		document.getElementById("day1").innerHTML = ('');
+		document.getElementById("day2").innerHTML = ('');
+		document.getElementById("day3").innerHTML = ('');
+		document.getElementById("day4").innerHTML = ('');
+		document.getElementById("day5").innerHTML = ('');
+		document.getElementById("day6").innerHTML = ('');
+	}
+	replenishDays();
+}
+function setDate() {
+    var d = new Date();
+    var m = d.getMonth();
+	var y = d.getFullYear();
+	document.getElementById('year').innerHTML = (y);
+	if (m==0)
+	{
+		document.getElementById('month').innerHTML = ('January');
+		var currYear = parseInt(document.getElementById('year').innerHTML);
+		currYear = currYear - 1;
+		document.getElementById('yearBack').innerHTML = currYear;
+		document.getElementById("monthBack").innerHTML = ('December');
+		document.getElementById("monthForward").innerHTML = ('February');
+	}	
+	else if (m==1)
+	{
+		document.getElementById('month').innerHTML = ('February');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('January');
+		document.getElementById("monthForward").innerHTML = ('March');
+	}	
+	else if (m==2)
+	{
+		document.getElementById('month').innerHTML = ('March');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('February');
+		document.getElementById("monthForward").innerHTML = ('April');
+	}	
+	else if (m==3)
+	{
+		document.getElementById('month').innerHTML = ('April');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('March');
+		document.getElementById("monthForward").innerHTML = ('May');
+	}	
+	else if (m==4)
+	{
+		document.getElementById('month').innerHTML = ('May');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('April');
+		document.getElementById("monthForward").innerHTML = ('June');
+	}	
+	else if (m==5)
+	{
+		document.getElementById('month').innerHTML = ('June');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('May');
+		document.getElementById("monthForward").innerHTML = ('July');
+	}	
+	else if (m==6)
+	{
+		document.getElementById('month').innerHTML = ('July');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('June');
+		document.getElementById("monthForward").innerHTML = ('August');
+	}	
+	else if (m==7)
+	{
+		document.getElementById('month').innerHTML = ('August');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('July');
+		document.getElementById("monthForward").innerHTML = ('September');
+	}	
+	else if (m==8)
+	{
+		document.getElementById('month').innerHTML = ('September');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('August');
+		document.getElementById("monthForward").innerHTML = ('October');
+	}	
+	else if (m==9)
+	{
+		document.getElementById('month').innerHTML = ('October');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('September');
+		document.getElementById("monthForward").innerHTML = ('November');
+	}	
+	else if (m==10)
+	{
+		document.getElementById('month').innerHTML = ('November');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById("monthBack").innerHTML = ('October');
+		document.getElementById("monthForward").innerHTML = ('December');
+	}	
+	else if (m==11)
+	{
+		var newYear = parseInt(document.getElementById('year').innerHTML);
+		newYear = newYear + 1;
+		document.getElementById('month').innerHTML = ('December');	
+		document.getElementById('yearBack').innerHTML = document.getElementById('year').innerHTML;
+		document.getElementById('yearForward').innerHTML = newYear;
+		document.getElementById("monthBack").innerHTML = ('November');
+		document.getElementById("monthForward").innerHTML = ('January');
+	}	
+	correctCalendarDays();
+}
+function monthBack(){
+
+	if ( document.getElementById('month').innerHTML == ('January') )
+	{
+		var currYear = parseInt(document.getElementById('year').innerHTML);
+		currYear = currYear - 1;
+		document.getElementById('year').innerHTML = currYear;
+		document.getElementById('month').innerHTML = ('December');
+		document.getElementById('monthBack').innerHTML = ('November');
+		document.getElementById('monthForward').innerHTML = ('January');
+	}
+	else if ( document.getElementById('month').innerHTML == ('December') )
+	{
+		var currYear = parseInt(document.getElementById('year').innerHTML);
+		document.getElementById('yearForward').innerHTML = currYear;
+		document.getElementById('year').innerHTML = currYear;
+		document.getElementById('month').innerHTML = ('November');
+		document.getElementById('monthBack').innerHTML = ('October');
+		document.getElementById('monthForward').innerHTML = ('December');
+	}
+	else if ( document.getElementById('month').innerHTML == ('November') )
+	{
+		document.getElementById('month').innerHTML = ('October');
+		document.getElementById('monthBack').innerHTML = ('September');
+		document.getElementById('monthForward').innerHTML = ('November');
+	}
+	else if ( document.getElementById('month').innerHTML == ('October') )
+	{
+		document.getElementById('month').innerHTML = ('September');
+		document.getElementById('monthBack').innerHTML = ('August');
+		document.getElementById('monthForward').innerHTML = ('October');
+	}
+	else if ( document.getElementById('month').innerHTML == ('September') )
+	{
+		document.getElementById('month').innerHTML = ('August');
+		document.getElementById('monthBack').innerHTML = ('July');
+		document.getElementById('monthForward').innerHTML = ('September');
+	}
+	else if ( document.getElementById('month').innerHTML == ('August') )
+	{
+		document.getElementById('month').innerHTML = ('July');
+		document.getElementById('monthBack').innerHTML = ('June');
+		document.getElementById('monthForward').innerHTML = ('August');
+	}
+	else if ( document.getElementById('month').innerHTML == ('July') )
+	{
+		document.getElementById('month').innerHTML = ('June');
+		document.getElementById('monthBack').innerHTML = ('May');
+		document.getElementById('monthForward').innerHTML = ('July');
+	}
+	else if ( document.getElementById('month').innerHTML == ('June') )
+	{
+		document.getElementById('month').innerHTML = ('May');
+		document.getElementById('monthBack').innerHTML = ('April');
+		document.getElementById('monthForward').innerHTML = ('June');
+	}
+	else if ( document.getElementById('month').innerHTML == ('May') )
+	{
+		document.getElementById('month').innerHTML = ('April');
+		document.getElementById('monthBack').innerHTML = ('March');
+		document.getElementById('monthForward').innerHTML = ('May');
+	}
+	else if ( document.getElementById('month').innerHTML == ('April') )
+	{
+		document.getElementById('month').innerHTML = ('March');
+		document.getElementById('monthBack').innerHTML = ('February');
+		document.getElementById('monthForward').innerHTML = ('April');
+	}
+	else if ( document.getElementById('month').innerHTML == ('March') )
+	{
+		document.getElementById('month').innerHTML = ('February');
+		document.getElementById('monthBack').innerHTML = ('January');
+		document.getElementById('monthForward').innerHTML = ('March');
+	}
+	else if ( document.getElementById('month').innerHTML == ('February') )
+	{
+		var currYear = parseInt(document.getElementById('year').innerHTML);
+		currYear = currYear - 1;
+		document.getElementById('yearBack').innerHTML = currYear;
+		document.getElementById('month').innerHTML = ('January');
+		document.getElementById('monthBack').innerHTML = ('December');
+		document.getElementById('monthForward').innerHTML = ('February');
+	}
+	correctCalendarDays();
+}
+
+function monthForward(){
+	
+	if ( document.getElementById('month').innerHTML == ('January') )
+	{
+		var currYear = document.getElementById('year').innerHTML;
+		document.getElementById('yearBack').innerHTML = currYear;
+		document.getElementById('month').innerHTML = ('February');
+		document.getElementById('monthBack').innerHTML = ('January');
+		document.getElementById('monthForward').innerHTML = ('March');
+	}
+	else if ( document.getElementById('month').innerHTML == ('February') )
+	{
+		document.getElementById('month').innerHTML = ('March');
+		document.getElementById('monthBack').innerHTML = ('February');
+		document.getElementById('monthForward').innerHTML = ('April');
+	}
+	else if ( document.getElementById('month').innerHTML == ('March') )
+	{
+		document.getElementById('month').innerHTML = ('April');
+		document.getElementById('monthBack').innerHTML = ('March');
+		document.getElementById('monthForward').innerHTML = ('May');
+	}
+	else if ( document.getElementById('month').innerHTML == ('April') )
+	{
+		document.getElementById('month').innerHTML = ('May');
+		document.getElementById('monthBack').innerHTML = ('April');
+		document.getElementById('monthForward').innerHTML = ('June');
+	}
+	else if ( document.getElementById('month').innerHTML == ('May') )
+	{
+		document.getElementById('month').innerHTML = ('June');
+		document.getElementById('monthBack').innerHTML = ('May');
+		document.getElementById('monthForward').innerHTML = ('July');
+	}
+	else if ( document.getElementById('month').innerHTML == ('June') )
+	{
+		document.getElementById('month').innerHTML = ('July');
+		document.getElementById('monthBack').innerHTML = ('June');
+		document.getElementById('monthForward').innerHTML = ('August');
+	}
+	else if ( document.getElementById('month').innerHTML == ('July') )
+	{
+		document.getElementById('month').innerHTML = ('August');
+		document.getElementById('monthBack').innerHTML = ('July');
+		document.getElementById('monthForward').innerHTML = ('September');
+	}
+	else if ( document.getElementById('month').innerHTML == ('August') )
+	{
+		document.getElementById('month').innerHTML = ('September');
+		document.getElementById('monthBack').innerHTML = ('August');
+		document.getElementById('monthForward').innerHTML = ('October');
+	}
+	else if ( document.getElementById('month').innerHTML == ('September') )
+	{
+		document.getElementById('month').innerHTML = ('October');
+		document.getElementById('monthBack').innerHTML = ('September');
+		document.getElementById('monthForward').innerHTML = ('November');
+	}
+	else if ( document.getElementById('month').innerHTML == ('October') )
+	{
+		document.getElementById('month').innerHTML = ('November');
+		document.getElementById('monthBack').innerHTML = ('October');
+		document.getElementById('monthForward').innerHTML = ('December');
+	}
+	else if ( document.getElementById('month').innerHTML == ('November') )
+	{
+		document.getElementById('month').innerHTML = ('December');
+		document.getElementById('monthBack').innerHTML = ('November');
+		document.getElementById('monthForward').innerHTML = ('January');
+		
+		var currYear = parseInt(document.getElementById('year').innerHTML);
+		currYear = currYear + 1;
+		document.getElementById('yearForward').innerHTML = currYear;
+	}
+	else if ( document.getElementById('month').innerHTML == ('December') )
+	{
+		document.getElementById('month').innerHTML = ('January');
+		document.getElementById('monthBack').innerHTML = ('December');
+		document.getElementById('monthForward').innerHTML = ('February');
+		
+		var currYear = parseInt(document.getElementById('year').innerHTML);
+		currYear = currYear + 1;
+		document.getElementById('year').innerHTML = currYear;
+	}
+	correctCalendarDays();
+}
+function formValidation(day,month,year) {
+	var checkBoxes = document.getElementsByTagName( 'input' );
+	var isChecked = false;
+    for (var i = 0; i < checkBoxes.length; i++) {
+        if ( checkBoxes[i].checked ) {
+            isChecked = true;
+        };
+    };
+    if ( isChecked ) {
+	
+		var aTime = document.getElementById('selectedTimeHrs');
+		var bTime = document.getElementById('selectedTimeMins');
+		var aptStart = aTime.options[aTime.selectedIndex].value + ':' + bTime.options[bTime.selectedIndex].value;
+		if (aptStart == "00:00")
+		{
+			alert( 'Please, select an appointment time!' );
+			return false;
+		}
+		else
+		{
+			var date = new Date();
+			date.setHours(aptStart.substring(0,2),aptStart.substring(3,5),0,0);
+			
+			if (document.getElementById('clean').checked)
+				date.setMinutes(date.getMinutes() + 10);
+			if (document.getElementById('cut').checked)
+				date.setMinutes(date.getMinutes() + 40);
+			if (document.getElementById('dry').checked)
+				date.setMinutes(date.getMinutes() + 5);
+			if (document.getElementById('dye').checked)
+				date.setMinutes(date.getMinutes() + 60);
+			var hours;
+			hours = date.getHours();
+			if (hours < 10)
+				hours = '0'+hours;
+			minutes = date.getMinutes();
+			if (minutes < 10)
+				minutes = '0'+minutes;
+			document.getElementById('time').value = (aptStart + '-' + hours+':'+minutes);
+			var currSched = window.frames[0].document.body.innerHTML;
+			var count = (currSched.match(/<\/tr>/g) || []).length;
+			currSched = currSched.replace(/<table>/g,'');
+			currSched = currSched.replace(/<tr>/g,'');
+			currSched = currSched.replace(/<td>/g,'');
+			currSched = currSched.replace(/<\/tr>/g,'');
+			currSched = currSched.replace(/<\/tbody>/g,'');
+			currSched = currSched.replace(/<tbody>/g,'');
+			currSched = currSched.replace(/<\/table>/g,'');
+			currSched = currSched.trim();
+			if (parseInt(count)==0)
+			{
+				document.getElementById("bookForm").submit();
+			}
+			else
+			{
+			//check each line until </td>
+				var count2 = 0;
+				var aptEnd = hours +""+ minutes;
+				var currAptEndTime = currSched.substring(currSched.indexOf("<\/td>")-5,currSched.indexOf("<\/td>"));
+				var currAptStartTime = currSched.substring(currSched.indexOf("<\/td>")-11,currSched.indexOf("<\/td>")-6);
+				var postion = 3;// we must now remove the : (3rd position) from the time to be able to compare times.
+				currAptEndTime = currAptEndTime.substring(0,postion - 1) + currAptEndTime.substring(postion, currAptEndTime.length);
+				currAptStartTime = currAptStartTime.substring(0,postion - 1) + currAptStartTime.substring(postion, currAptStartTime.length);
+				aptStart = aptStart.substring(0,postion - 1) + aptStart.substring(postion, aptStart.length);
+				while (parseInt(aptStart) >= parseInt(currAptEndTime))
+				{
+					//alert("aptStart("+aptStart+") >= currAptEndTime("+currAptEndTime+")");
+					currSched 		= currSched.substring(currSched.indexOf("<\/td>")+5,currSched.length);
+					currAptEndTime 	= currSched.substring(currSched.indexOf("<\/td>")-5,currSched.indexOf("<\/td>"));
+					currAptStartTime= currSched.substring(currSched.indexOf("<\/td>")-11,currSched.indexOf("<\/td>")-6);
+					//remove the : from the time to make times comparable
+					currAptEndTime 	= currAptEndTime.substring(0,postion - 1) + currAptEndTime.substring(postion, currAptEndTime.length);
+					currAptStartTime= currAptStartTime.substring(0,postion - 1) + currAptStartTime.substring(postion, currAptStartTime.length);
+					count2 = count2 + 1;
+				}
+				if ((parseInt(aptStart) < parseInt(currAptStartTime))&&(parseInt(aptEnd) <= parseInt(currAptStartTime)))
+				{
+					//alert("((aptStart("+aptStart+")<currAptStartTime("+currAptStartTime+")&&(aptEnd("+aptEnd+")<=currAptStartTime("+currAptStartTime+"))");
+					document.getElementById("bookForm").submit();
+				}
+				else if (parseInt(count2)==parseInt(count))
+				{
+					//alert("count2("+count2+")==count("+count+")")
+					document.getElementById("bookForm").submit();
+				}
+				else
+				{
+					alert("Sorry, there is no place available at this time. Please make changes to your appointments' schedule.");
+				}
+			}
+		}
+    }
+	else {
+        alert( 'Please, check at least one checkbox!' );
+		return false;
+    }
+	
+}
+function addTime()
+{
+	var currentAdd = 0;
+	if (document.getElementById('clean').checked)
+		currentAdd = currentAdd + 10;
+	if (document.getElementById('cut').checked)
+		currentAdd = currentAdd + 40;
+	if (document.getElementById('dry').checked)
+		currentAdd = currentAdd + 5;
+	if (document.getElementById('dye').checked)
+		currentAdd = currentAdd + 60;
+	document.getElementById('addedTime').innerHTML = '+' + currentAdd + ' minutes';
+}
+function daySelect(x)
+{
+	var year = document.getElementById('year').innerHTML;
+	var month = document.getElementById('month').innerHTML + "";
+	var day = document.getElementById('day'+x).innerHTML;
+	var x = 'Schedule an appointment for ' + month + ' ' + day + ', ' + year + '<br>';
+	x = x + '<form id=bookForm onsubmit="event.preventDefault(); formValidation();" action=book.php method=post><input type=hidden name=year id=year value='+year+'>';
+	x = x + '<input type=hidden name=month id=month value='+month+'>';
+	x = x + '<input type=hidden name=day id=day value='+day+'>';
+	x = x + '<input type=hidden name=time id=time>';
+	x = x + '<small>Time:</small><select name=selectedTimeHrs id=selectedTimeHrs>';
+	x = x + '<option value="00">00</option>';
+	x = x + '<option value="01">01</option>';
+	x = x + '<option value="02">02</option>';
+	x = x + '<option value="03">03</option>';
+	x = x + '<option value="04">04</option>';
+	x = x + '<option value="05">05</option>';
+	x = x + '<option value="06">06</option>';
+	x = x + '<option value="07">07</option>';
+	x = x + '<option value="08">08</option>';
+	x = x + '<option value="09">09</option>';
+	x = x + '<option value="10">10</option>';
+	x = x + '<option value="11">11</option>';
+	x = x + '<option value="12">12</option>';
+	x = x + '<option value="13">13</option>';
+	x = x + '<option value="14">14</option>';
+	x = x + '<option value="15">15</option>';
+	x = x + '<option value="16">16</option>';
+	x = x + '<option value="17">17</option>';
+	x = x + '<option value="18">18</option>';
+	x = x + '<option value="19">19</option>';
+	x = x + '<option value="20">20</option>';
+	x = x + '<option value="21">21</option>';
+	x = x + '<option value="22">22</option>';
+	x = x + '<option value="23">23</option>';
+	x = x + '</select>:<select name=selectedTimeMins id=selectedTimeMins>';
+	x = x + '<option value="00">00</option>';
+	x = x + '<option value="01">01</option>';
+	x = x + '<option value="02">02</option>';
+	x = x + '<option value="03">03</option>';
+	x = x + '<option value="04">04</option>';
+	x = x + '<option value="05">05</option>';
+	x = x + '<option value="06">06</option>';
+	x = x + '<option value="07">07</option>';
+	x = x + '<option value="08">08</option>';
+	x = x + '<option value="09">09</option>';
+	x = x + '<option value="10">10</option>';
+	x = x + '<option value="11">11</option>';
+	x = x + '<option value="12">12</option>';
+	x = x + '<option value="13">13</option>';
+	x = x + '<option value="14">14</option>';
+	x = x + '<option value="15">15</option>';
+	x = x + '<option value="16">16</option>';
+	x = x + '<option value="17">17</option>';
+	x = x + '<option value="18">18</option>';
+	x = x + '<option value="19">19</option>';
+	x = x + '<option value="20">20</option>';
+	x = x + '<option value="21">21</option>';
+	x = x + '<option value="22">22</option>';
+	x = x + '<option value="23">23</option>';
+	x = x + '<option value="24">24</option>';
+	x = x + '<option value="25">25</option>';
+	x = x + '<option value="26">26</option>';
+	x = x + '<option value="27">27</option>';
+	x = x + '<option value="28">28</option>';
+	x = x + '<option value="29">29</option>';
+	x = x + '<option value="30">30</option>';
+	x = x + '<option value="31">31</option>';
+	x = x + '<option value="32">32</option>';
+	x = x + '<option value="33">33</option>';
+	x = x + '<option value="34">34</option>';
+	x = x + '<option value="35">35</option>';
+	x = x + '<option value="36">36</option>';
+	x = x + '<option value="37">37</option>';
+	x = x + '<option value="38">38</option>';
+	x = x + '<option value="39">39</option>';
+	x = x + '<option value="40">40</option>';
+	x = x + '<option value="41">41</option>';
+	x = x + '<option value="42">42</option>';
+	x = x + '<option value="43">43</option>';
+	x = x + '<option value="44">44</option>';
+	x = x + '<option value="45">45</option>';
+	x = x + '<option value="46">46</option>';
+	x = x + '<option value="47">47</option>';
+	x = x + '<option value="48">48</option>';
+	x = x + '<option value="49">49</option>';
+	x = x + '<option value="50">50</option>';
+	x = x + '<option value="51">51</option>';
+	x = x + '<option value="52">52</option>';
+	x = x + '<option value="53">53</option>';
+	x = x + '<option value="54">54</option>';
+	x = x + '<option value="55">55</option>';
+	x = x + '<option value="56">56</option>';
+	x = x + '<option value="57">57</option>';
+	x = x + '<option value="58">58</option>';
+	x = x + '<option value="59">59</option>';
+	x = x + '</select><div id=addedTime>+0 minutes</div>';
+	x = x + '<input type=checkbox value=clean name=clean id=clean onclick="addTime()">Clean <input type=checkbox value=cut name=cut id=cut onclick="addTime()">Cut <input type=checkbox value=dry name=dry id=dry onclick="addTime()">Dry <input type=checkbox value=dye name=dye id=dye onclick="addTime()">Dye';
+	x = x + '<br><input type=submit></form>';
+	x = x + 'Current appointments: <br>';
+	x = x + '<iframe height=400 name=sched id=sched frameborder=0 src=checkSchedule.php?theDay='+day+'&theMonth='+month+'&theYear='+year+'></iframe>';
+	document.getElementById('bookingArea').innerHTML = (x);
+}
+</script>
+</head>
+<body onload="setDate();" bgcolor=fcf4e3>
+<center><table bgcolor=fcf4e3><tr><td valign=top></td><td valign=top>	
+<center>
+
+
+
+<table><tr>
+<td><a href=# onclick="monthBack();"><div id=monthBack>December</div><div id=yearBack>2015</div></a></td>
+
+<td><div id=month>January</div><div id=year>2016</div></td>
+
+<td><a href=# onclick="monthForward();"><div id=monthForward>February</div><div id=yearForward>2016</div></a></td>
+</tr></table>
+
+
+<table border=1>
+
+<tr><td>Sunday</td><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td></tr>
+<tr><td><div id=day1 onclick="daySelect(1);">Day1</div></td><td><div id=day2 onclick="daySelect(2);">Day2</div></td><td><div id=day3 onclick="daySelect(3);">Day3</div></td><td><div id=day4 onclick="daySelect(4);">Day4</div></td>
+<td><div id=day5 onclick="daySelect(5);">Day5</div></td><td><div id=day6 onclick="daySelect(6);">Day6</div></td><td><div id=day7 onclick="daySelect(7);">Day7</div></td></tr>
+
+<tr><td><div id=day8 onclick="daySelect(8);">Day8</div></td><td><div id=day9 onclick="daySelect(9);">Day9</div></td><td><div id=day10 onclick="daySelect(10);">Day10</div></td><td><div id=day11 onclick="daySelect(11);">Day11</div></td>
+<td><div id=day12 onclick="daySelect(12);">Day12</div></td><td><div id=day13 onclick="daySelect(13);">Day13</div></td><td><div id=day14 onclick="daySelect(14);">Day14</div></td></tr>
+
+<tr><td><div id=day15 onclick="daySelect(15);">Day15</div></td><td><div id=day16 onclick="daySelect(16);">Day16</div></td><td><div id=day17 onclick="daySelect(17);">Day17</div></td><td><div id=day18 onclick="daySelect(18);">Day18</div></td>
+<td><div id=day19 onclick="daySelect(19);">Day19</div></td><td><div id=day20 onclick="daySelect(20);">Day20</div></td><td><div id=day21 onclick="daySelect(21);">Day21</div></td></tr>
+
+<tr><td><div id=day22 onclick="daySelect(22);">Day22</div></td><td><div id=day23 onclick="daySelect(23);">Day23</div></td><td><div id=day24 onclick="daySelect(24);">Day24</div></td><td><div id=day25 onclick="daySelect(25);">Day25</div></td>
+<td><div id=day26 onclick="daySelect(26);">Day26</div></td><td><div id=day27 onclick="daySelect(27);">Day27</div></td><td><div id=day28 onclick="daySelect(28);">Day28</div></td></tr>
+
+<tr><td><div id=day29 onclick="daySelect(29);">Day29</div></td><td><div id=day30 onclick="daySelect(30);">Day30</div></td><td><div id=day31 onclick="daySelect(31);">Day31</div></td><td><div id=day32 onclick="daySelect(32);">Day32</div></td>
+<td><div id=day33 onclick="daySelect(33);">Day33</div></td><td><div id=day34 onclick="daySelect(34);">Day34</div></td><td><div id=day35 onclick="daySelect(35);">Day35</div></td></tr>
+
+<tr><td><div id=day36 onclick="daySelect(36);">Day36</div></td><td><div id=day37 onclick="daySelect(37);">Day37</div></td><td><div id=day38 onclick="daySelect(38);">Day38</div></td><td><div id=day39 onclick="daySelect(39);">Day39</div></td>
+<td><div id=day40 onclick="daySelect(40);">Day40</div></td><td><div id=day41 onclick="daySelect(41);">Day41</div></td><td><div id=day42 onclick="daySelect(42);">Day42</div></td></tr>
+</table>
+<br>
+
+</td></tr><tr><td></td><td>
+<div id=bookingArea></div><br>
+<center><small>Creator : Max Hanna</center>
+</td></tr></table>
+</body>
+</html>
